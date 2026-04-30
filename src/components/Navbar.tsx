@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { SITE, RESEARCH_SECTIONS } from '../data/content';
 
@@ -27,11 +27,11 @@ function Dropdown({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    function handleClick(e: MouseEvent) {
+    function handleMouseDown(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) onClose();
     }
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
+    document.addEventListener('mousedown', handleMouseDown);
+    return () => document.removeEventListener('mousedown', handleMouseDown);
   }, [onClose]);
 
   return (
@@ -60,7 +60,6 @@ function Dropdown({
             <NavLink
               key={link.href}
               to={link.href}
-              onClick={onClose}
               className={({ isActive }) =>
                 `block px-4 py-2.5 text-sm font-sans transition-colors duration-150 ${
                   isActive
@@ -83,10 +82,13 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
+  // Close everything on navigation — this is what actually closes the dropdown after a link click
   useEffect(() => {
     setOpenDropdown(null);
     setMobileOpen(false);
   }, [location]);
+
+  const closeDropdown = useCallback(() => setOpenDropdown(null), []);
 
   const toggle = (name: string) =>
     setOpenDropdown((prev) => (prev === name ? null : name));
@@ -110,9 +112,7 @@ export default function Navbar() {
             <NavLink
               to="/"
               end
-              className={({ isActive }) =>
-                `nav-link ${isActive ? 'text-terracotta' : ''}`
-              }
+              className={({ isActive }) => `nav-link ${isActive ? 'text-terracotta' : ''}`}
             >
               Home
             </NavLink>
@@ -122,7 +122,7 @@ export default function Navbar() {
               links={teamLinks}
               isOpen={openDropdown === 'team'}
               onToggle={() => toggle('team')}
-              onClose={() => setOpenDropdown(null)}
+              onClose={closeDropdown}
             />
 
             <Dropdown
@@ -130,32 +130,26 @@ export default function Navbar() {
               links={researchLinks}
               isOpen={openDropdown === 'research'}
               onToggle={() => toggle('research')}
-              onClose={() => setOpenDropdown(null)}
+              onClose={closeDropdown}
             />
 
             <NavLink
               to="/gallery"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? 'text-terracotta' : ''}`
-              }
+              className={({ isActive }) => `nav-link ${isActive ? 'text-terracotta' : ''}`}
             >
               Gallery
             </NavLink>
 
             <NavLink
               to="/conclusion"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? 'text-terracotta' : ''}`
-              }
+              className={({ isActive }) => `nav-link ${isActive ? 'text-terracotta' : ''}`}
             >
               Conclusion
             </NavLink>
 
             <NavLink
               to="/references"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? 'text-terracotta' : ''}`
-              }
+              className={({ isActive }) => `nav-link ${isActive ? 'text-terracotta' : ''}`}
             >
               References
             </NavLink>
