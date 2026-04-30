@@ -439,9 +439,9 @@ export const GALLERY = {
   title: 'Our Food Outing',
   intro: 'A visual record of our shared food experiences throughout the course.',
   slots: [
-    { id: 1, src: '/gallery/photo1.jpg', caption: 'Caption to be added', alt: 'Group food outing photo 1' },
-    { id: 2, src: '/gallery/photo2.jpg', caption: 'Caption to be added', alt: 'Group food outing photo 2' },
-    { id: 3, src: '/gallery/photo3.jpg', caption: 'Caption to be added', alt: 'Group food outing photo 3' },
+    { id: 1, src: '/gallery/photo1.jpg', caption: 'Preparation of a traditional Uzbek dish Osh in a Kazan.', alt: 'Preparation of Osh in a Kazan' },
+    { id: 2, src: '/gallery/photo2.jpg', caption: 'Our group enjoying Osh in traditional plates.', alt: 'Group enjoying Osh in traditional plates' },
+    { id: 3, src: '/gallery/photo3.jpg', caption: 'Our Team at Komolon Osh.', alt: 'Team at Komolon Osh' },
   ],
 };
 
