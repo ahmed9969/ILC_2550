@@ -66,6 +66,7 @@ export interface TeamMember {
   slug: string;
   name: string;
   role: string;
+  photo?: string;
   keyLearnings: string[];
   motto: string;
   courseThemes: string;
@@ -93,7 +94,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   { id: 'member8',  slug: '/team/member8',  name: 'Alishir Faik',          role: 'Visual Designer & Researcher',   ...PLACEHOLDER },
   { id: 'member9',  slug: '/team/member9',  name: 'Raxmatillo Tolibjonov', role: 'Content Strategist & Writer',    ...PLACEHOLDER },
   { id: 'member10', slug: '/team/member10', name: 'Samandar Jafarov',      role: 'Research Lead & Analyst',        ...PLACEHOLDER },
-  { id: 'member11', slug: '/team/member11', name: 'Behruzbek Olimjonov',   role: 'Researcher & Writer',            ...PLACEHOLDER },
+  { id: 'member11', slug: '/team/member11', name: 'Behruzbek Olimjonov',   role: 'Researcher & Writer (Yapper)',   photo: '/team/behruzbek.jpg', ...PLACEHOLDER },
   { id: 'member12', slug: '/team/member12', name: 'Malikjon Rustamov',     role: 'Researcher & Analyst',           ...PLACEHOLDER },
 ];
 
