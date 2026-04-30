@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-charcoal font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  #root {
+    @apply min-h-screen flex flex-col;
+  }
+}
+
+@layer components {
+  .prose-article p {
+    @apply text-charcoal leading-relaxed mb-5;
+  }
+
+  .prose-article h2 {
+    @apply font-serif text-2xl text-olive font-semibold mt-10 mb-4;
+  }
+
+  .prose-article h3 {
+    @apply font-serif text-xl text-terracotta font-semibold mt-8 mb-3;
+  }
+
+  .nav-link {
+    @apply text-charcoal hover:text-terracotta transition-colors duration-200 font-medium text-sm tracking-wide;
+  }
+
+  .btn-primary {
+    @apply bg-terracotta text-cream px-6 py-3 font-sans font-medium text-sm tracking-wide hover:bg-terracotta-dark transition-colors duration-200;
+  }
+
+  .section-label {
+    @apply text-terracotta text-xs font-sans font-semibold uppercase tracking-widest mb-3;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .pull-quote {
+    @apply border-l-4 border-terracotta pl-6 py-2 my-8;
+  }
+
+  .page-hero {
+    @apply bg-olive text-cream py-20 px-6;
+  }
+
+  .page-content {
+    @apply max-w-3xl mx-auto px-6 py-16;
+  }
+
+  .placeholder-image {
+    @apply bg-cream-dark flex items-center justify-center rounded;
+  }
+}
+
+/* Dropdown animation */
+.dropdown-enter {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+.dropdown-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}

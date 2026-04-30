@@ -1,0 +1,57 @@
+import { Link } from 'react-router-dom';
+import PageHero from '../../components/PageHero';
+import { TEAM_OVERVIEW, TEAM_MEMBERS } from '../../data/content';
+
+function PlaceholderAvatar({ name }: { name: string }) {
+  return (
+    <div
+      className="w-full aspect-square bg-cream-dark flex flex-col items-center justify-center border border-cream-dark"
+      aria-label={`Placeholder photo for ${name}`}
+    >
+      <svg className="w-16 h-16 text-olive/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+      <span className="text-xs text-olive/40 font-sans mt-2">Photo placeholder</span>
+    </div>
+  );
+}
+
+export default function TeamOverview() {
+  return (
+    <>
+      <PageHero
+        eyebrow={TEAM_OVERVIEW.eyebrow}
+        title={TEAM_OVERVIEW.heading}
+        subtitle={TEAM_OVERVIEW.intro}
+      />
+
+      <section className="bg-cream py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {TEAM_MEMBERS.map((member, i) => (
+              <Link
+                key={member.id}
+                to={member.slug}
+                className="group bg-white border border-cream-dark card-hover block overflow-hidden"
+              >
+                <PlaceholderAvatar name={member.name} />
+                <div className="p-5">
+                  <span className="text-terracotta/50 text-xs font-sans font-semibold tracking-widest block mb-1">
+                    Member {i + 1}
+                  </span>
+                  <h3 className="font-serif text-lg text-charcoal font-semibold group-hover:text-terracotta transition-colors mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-olive text-xs font-sans mb-4">{member.role}</p>
+                  <span className="inline-block text-terracotta text-xs font-medium font-sans">
+                    View reflection →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
