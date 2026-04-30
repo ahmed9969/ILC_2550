@@ -1,7 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { TEAM_MEMBERS } from '../../data/content';
 import PageHero from '../../components/PageHero';
-import PlaceholderNote from '../../components/PlaceholderNote';
 
 function PlaceholderPhoto({ name }: { name: string }) {
   return (
@@ -34,8 +33,6 @@ export default function MemberPage() {
 
       <section className="bg-cream py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <PlaceholderNote text="Member reflection — content to be added by team member" />
-
           <div className="flex flex-col sm:flex-row gap-10 mb-14 items-start">
             <div className="flex-shrink-0">
               <PlaceholderPhoto name={member.name} />

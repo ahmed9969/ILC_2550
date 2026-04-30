@@ -11,7 +11,6 @@ import NotFound from './pages/NotFound';
 
 // Team
 import TeamOverview from './pages/team/TeamOverview';
-import MemberPage from './pages/team/MemberPage';
 
 // Research
 import ResearchHub from './pages/research/ResearchHub';
@@ -33,7 +32,6 @@ export default function App() {
 
           {/* Team */}
           <Route path="team" element={<TeamOverview />} />
-          <Route path="team/:id" element={<MemberPage />} />
 
           {/* Research */}
           <Route path="research" element={<ResearchHub />} />

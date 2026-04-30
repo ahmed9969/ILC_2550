@@ -1,10 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { SITE, RESEARCH_SECTIONS, TEAM_MEMBERS } from '../data/content';
+import { SITE, RESEARCH_SECTIONS } from '../data/content';
 
 const teamLinks = [
   { label: 'Team Overview', href: '/team' },
-  ...TEAM_MEMBERS.map((m) => ({ label: m.name, href: m.slug })),
 ];
 
 const researchLinks = RESEARCH_SECTIONS.map((s) => ({
