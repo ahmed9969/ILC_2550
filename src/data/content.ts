@@ -437,13 +437,12 @@ export const PUBLIC_ENGAGEMENT = {
 export const GALLERY = {
   eyebrow: 'Gallery',
   title: 'Our Food Outing',
-  note: 'Photos from group food outing — to be uploaded',
-  intro: 'A visual record of our shared food experiences throughout the course. Images and captions to be added.',
-  slots: Array.from({ length: 12 }, (_, i) => ({
-    id: i + 1,
-    caption: `Photo caption ${i + 1} — to be added`,
-    alt: `Gallery image ${i + 1} placeholder`,
-  })),
+  intro: 'A visual record of our shared food experiences throughout the course.',
+  slots: [
+    { id: 1, src: '/gallery/photo1.jpg', caption: 'Caption to be added', alt: 'Group food outing photo 1' },
+    { id: 2, src: '/gallery/photo2.jpg', caption: 'Caption to be added', alt: 'Group food outing photo 2' },
+    { id: 3, src: '/gallery/photo3.jpg', caption: 'Caption to be added', alt: 'Group food outing photo 3' },
+  ],
 };
 
 // ─── Conclusion ──────────────────────────────────────────────────────────────
