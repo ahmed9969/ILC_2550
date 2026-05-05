@@ -7,6 +7,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 18px;
   }
 
   body {
@@ -38,15 +39,15 @@
   }
 
   .nav-link {
-    @apply text-charcoal hover:text-terracotta transition-colors duration-200 font-medium text-sm tracking-wide;
+    @apply text-charcoal hover:text-terracotta transition-colors duration-200 font-medium text-base tracking-wide;
   }
 
   .btn-primary {
-    @apply bg-terracotta text-cream px-6 py-3 font-sans font-medium text-sm tracking-wide hover:bg-terracotta-dark transition-colors duration-200;
+    @apply bg-terracotta text-cream px-7 py-4 font-sans font-medium text-base tracking-wide hover:bg-terracotta-dark transition-colors duration-200;
   }
 
   .section-label {
-    @apply text-terracotta text-xs font-sans font-semibold uppercase tracking-widest mb-3;
+    @apply text-terracotta text-sm font-sans font-semibold uppercase tracking-widest mb-3;
   }
 
   .card-hover {

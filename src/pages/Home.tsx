@@ -12,30 +12,64 @@ export default function Home() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-terracotta via-transparent to-transparent" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-6 py-28 md:py-40">
-          <div className="max-w-3xl">
-            <p className="text-terracotta-light text-xs font-sans font-semibold uppercase tracking-widest mb-6">
-              {hero.eyebrow}
-            </p>
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-cream leading-tight mb-6">
-              {hero.heading}
-            </h1>
-            <p className="font-serif text-xl md:text-2xl text-terracotta-light italic mb-4">
-              {hero.subheading}
-            </p>
-            <p className="text-cream/75 text-base md:text-lg leading-relaxed mb-10 max-w-xl">
-              {hero.body}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to={hero.cta.href} className="btn-primary inline-block text-center">
-                {hero.cta.label}
-              </Link>
-              <Link
-                to={hero.cta2.href}
-                className="inline-block px-6 py-3 border border-cream/40 text-cream text-sm font-sans font-medium tracking-wide hover:border-cream hover:bg-cream/10 transition-all duration-200 text-center"
-              >
-                {hero.cta2.label}
-              </Link>
+        <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left — text */}
+            <div>
+              <p className="text-terracotta-light text-sm font-sans font-semibold uppercase tracking-widest mb-6">
+                {hero.eyebrow}
+              </p>
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-cream leading-tight mb-6">
+                {hero.heading}
+              </h1>
+              <p className="font-serif text-xl md:text-2xl text-terracotta-light italic mb-4">
+                {hero.subheading}
+              </p>
+              <p className="text-cream/75 text-lg leading-relaxed mb-10">
+                {hero.body}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to={hero.cta.href} className="btn-primary inline-block text-center">
+                  {hero.cta.label}
+                </Link>
+                <Link
+                  to={hero.cta2.href}
+                  className="inline-block px-7 py-4 border border-cream/40 text-cream text-base font-sans font-medium tracking-wide hover:border-cream hover:bg-cream/10 transition-all duration-200 text-center"
+                >
+                  {hero.cta2.label}
+                </Link>
+              </div>
+            </div>
+
+            {/* Right — video */}
+            <div className="relative w-full">
+              <div className="relative overflow-hidden border-2 border-cream/20 shadow-2xl bg-charcoal/40 aspect-video">
+                <video
+                  src="/hero-video.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  onError={(e) => {
+                    (e.currentTarget as HTMLVideoElement).style.display = 'none';
+                    const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback shown if /hero-video.mp4 is missing */}
+                <div
+                  className="absolute inset-0 flex-col items-center justify-center text-cream/60 text-center px-6"
+                  style={{ display: 'none' }}
+                >
+                  <svg className="w-16 h-16 mb-4 text-cream/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                  </svg>
+                  <p className="text-sm font-sans">Add <span className="font-mono bg-cream/10 px-1 rounded">hero-video.mp4</span> to the <span className="font-mono bg-cream/10 px-1 rounded">public/</span> folder</p>
+                </div>
+              </div>
+              {/* Decorative border offset */}
+              <div className="absolute -bottom-3 -right-3 w-full h-full border border-terracotta/30 -z-10" />
             </div>
           </div>
         </div>

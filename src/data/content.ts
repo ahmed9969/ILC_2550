@@ -84,8 +84,8 @@ const PLACEHOLDER = {
 };
 
 export const TEAM_MEMBERS: TeamMember[] = [
-  { id: 'member1',  slug: '/team/member1',  name: 'Shahinaxon Ibrohimova', role: 'Researcher & Writer',             ...PLACEHOLDER },
-  { id: 'member2',  slug: '/team/member2',  name: 'Farangiz Kurbanova',    role: 'Researcher & Editor',            ...PLACEHOLDER },
+  { id: 'member1',  slug: '/team/member1',  name: 'Shahinaxon Ibrohimova', role: 'Researcher & Writer',             photo: '/team/Shahinaxon.jpg', ...PLACEHOLDER },
+  { id: 'member2',  slug: '/team/member2',  name: 'Farangiz Kurbanova',    role: 'Researcher & Editor',            photo: '/team/farangiz.jpg', ...PLACEHOLDER },
   { id: 'member3',  slug: '/team/member3',  name: 'Shohruhbek Hakimov',    role: 'Visual Designer & Researcher',   ...PLACEHOLDER },
   { id: 'member4',  slug: '/team/member4',  name: 'Aziza Jonaliyeva',      role: 'Content Strategist & Writer',    ...PLACEHOLDER },
   { id: 'member5',  slug: '/team/member5',  name: 'Abdulboriy Qodirov',    role: 'Research Lead & Analyst',        ...PLACEHOLDER },
@@ -440,8 +440,8 @@ export const GALLERY = {
   intro: 'A visual record of our shared food experiences throughout the course.',
   slots: [
     { id: 1, src: '/gallery/photo1.jpg', caption: 'Preparation of a traditional Uzbek dish Osh in a Kazan.', alt: 'Preparation of Osh in a Kazan' },
-    { id: 2, src: '/gallery/photo2.jpeg', caption: 'Our group enjoying Osh in traditional plates.', alt: 'Group enjoying Osh in traditional plates' },
-    { id: 3, src: '/gallery/photo3.jpeg', caption: 'Our Team at Komolon Osh.', alt: 'Team at Komolon Osh' },
+    { id: 2, src: '/gallery/photo2.jpg', caption: 'Our group enjoying Osh in traditional plates.', alt: 'Group enjoying Osh in traditional plates' },
+    { id: 3, src: '/gallery/photo3.jpg', caption: 'Our Team at Komolon Osh.', alt: 'Team at Komolon Osh' },
   ],
 };
 

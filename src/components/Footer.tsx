@@ -51,8 +51,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-white/10 text-center">
-          <p className="text-cream/50 text-xs font-sans tracking-wide">{SITE.footer}</p>
+        <div className="mt-10 pt-6 border-t border-white/10 text-center space-y-2">
+          <p className="text-cream/60 text-xs font-sans leading-relaxed">
+            Content was refined and parts of this website were created with support of AI tools like Claude Code.
+          </p>
+          <p className="text-cream/50 text-xs font-sans tracking-wide">
+            © 2026 ILC 2550 4T SP 2026. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
