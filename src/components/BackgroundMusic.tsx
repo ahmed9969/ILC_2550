@@ -9,27 +9,26 @@ export default function BackgroundMusic() {
     const audio = new Audio('/uzbek-music.mp3');
     audio.loop = true;
     audio.volume = 0.25;
+    audio.muted = true; // start muted so autoplay is never blocked
     audioRef.current = audio;
 
-    const tryPlay = () => {
-      audio.play().then(() => setPlaying(true)).catch(() => {});
-    };
-
-    // Try immediate autoplay
-    tryPlay();
-
-    // Also fire on the very first interaction in case autoplay was blocked
-    const events = ['mousemove', 'touchstart', 'click', 'keydown', 'scroll'] as const;
-    const onInteract = () => {
-      if (!audio.paused) return;
-      tryPlay();
-    };
-    events.forEach(e => window.addEventListener(e, onInteract, { once: true, passive: true }));
+    // Muted autoplay always works — then immediately unmute
+    audio.play().then(() => {
+      audio.muted = false;
+      setPlaying(true);
+    }).catch(() => {
+      // If even muted autoplay fails, wait for first real click
+      const unlock = () => {
+        audio.muted = false;
+        audio.play().then(() => setPlaying(true)).catch(() => {});
+        window.removeEventListener('click', unlock);
+      };
+      window.addEventListener('click', unlock);
+    });
 
     return () => {
       audio.pause();
       audio.src = '';
-      events.forEach(e => window.removeEventListener(e, onInteract));
     };
   }, []);
 
