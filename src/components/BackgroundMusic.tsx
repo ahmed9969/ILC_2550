@@ -15,10 +15,10 @@ export default function BackgroundMusic() {
       if (startedRef.current) return;
       startedRef.current = true;
       audio.play().then(() => setPlaying(true)).catch(() => {});
-      // Remove listeners after first interaction
+      window.removeEventListener('mousemove', startOnInteraction);
+      window.removeEventListener('touchstart', startOnInteraction);
       window.removeEventListener('click', startOnInteraction);
       window.removeEventListener('keydown', startOnInteraction);
-      window.removeEventListener('touchstart', startOnInteraction);
       window.removeEventListener('scroll', startOnInteraction);
     };
 
@@ -27,17 +27,19 @@ export default function BackgroundMusic() {
       startedRef.current = true;
       setPlaying(true);
     }).catch(() => {
-      // Autoplay blocked — wait for first user interaction
+      // Autoplay blocked — start on the earliest possible interaction
+      window.addEventListener('mousemove', startOnInteraction);
+      window.addEventListener('touchstart', startOnInteraction);
       window.addEventListener('click', startOnInteraction);
       window.addEventListener('keydown', startOnInteraction);
-      window.addEventListener('touchstart', startOnInteraction);
       window.addEventListener('scroll', startOnInteraction);
     });
 
     return () => {
+      window.removeEventListener('mousemove', startOnInteraction);
+      window.removeEventListener('touchstart', startOnInteraction);
       window.removeEventListener('click', startOnInteraction);
       window.removeEventListener('keydown', startOnInteraction);
-      window.removeEventListener('touchstart', startOnInteraction);
       window.removeEventListener('scroll', startOnInteraction);
     };
   }, []);
