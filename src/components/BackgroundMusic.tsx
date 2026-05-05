@@ -4,18 +4,42 @@ export default function BackgroundMusic() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [visible, setVisible] = useState(true);
+  const startedRef = useRef(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
     audio.volume = 0.25;
-    // Attempt autoplay on first load; browsers may block it until user interacts
-    const attempt = audio.play();
-    if (attempt !== undefined) {
-      attempt.then(() => setPlaying(true)).catch(() => {
-        // Autoplay blocked — user must click to start
-      });
-    }
+
+    const startOnInteraction = () => {
+      if (startedRef.current) return;
+      startedRef.current = true;
+      audio.play().then(() => setPlaying(true)).catch(() => {});
+      // Remove listeners after first interaction
+      window.removeEventListener('click', startOnInteraction);
+      window.removeEventListener('keydown', startOnInteraction);
+      window.removeEventListener('touchstart', startOnInteraction);
+      window.removeEventListener('scroll', startOnInteraction);
+    };
+
+    // Try immediate autoplay first
+    audio.play().then(() => {
+      startedRef.current = true;
+      setPlaying(true);
+    }).catch(() => {
+      // Autoplay blocked — wait for first user interaction
+      window.addEventListener('click', startOnInteraction);
+      window.addEventListener('keydown', startOnInteraction);
+      window.addEventListener('touchstart', startOnInteraction);
+      window.addEventListener('scroll', startOnInteraction);
+    });
+
+    return () => {
+      window.removeEventListener('click', startOnInteraction);
+      window.removeEventListener('keydown', startOnInteraction);
+      window.removeEventListener('touchstart', startOnInteraction);
+      window.removeEventListener('scroll', startOnInteraction);
+    };
   }, []);
 
   const toggle = () => {
