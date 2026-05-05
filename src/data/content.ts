@@ -84,7 +84,7 @@ const PLACEHOLDER = {
 };
 
 export const TEAM_MEMBERS: TeamMember[] = [
-  { id: 'member1',  slug: '/team/member1',  name: 'Shahinaxon Ibrohimova', role: 'Researcher & Writer',             photo: '/team/Shahinaxon.jpg', ...PLACEHOLDER },
+  { id: 'member1',  slug: '/team/member1',  name: 'Shahinaxon Ibrohimova', role: 'Researcher & Writer',             photo: '/team/shahinaxon.jpg', ...PLACEHOLDER },
   { id: 'member2',  slug: '/team/member2',  name: 'Farangiz Kurbanova',    role: 'Researcher & Editor',            photo: '/team/farangiz.jpg', ...PLACEHOLDER },
   { id: 'member3',  slug: '/team/member3',  name: 'Shohruhbek Hakimov',    role: 'Visual Designer & Researcher',   ...PLACEHOLDER },
   { id: 'member4',  slug: '/team/member4',  name: 'Aziza Jonaliyeva',      role: 'Content Strategist & Writer',    ...PLACEHOLDER },
