@@ -44,29 +44,13 @@ export default function Home() {
             {/* Right — video */}
             <div className="relative w-full">
               <div className="relative overflow-hidden border-2 border-cream/20 shadow-2xl bg-charcoal/40 aspect-video">
-                <video
-                  src="/hero-video.mp4"
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  onError={(e) => {
-                    (e.currentTarget as HTMLVideoElement).style.display = 'none';
-                    const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = 'flex';
-                  }}
+                <iframe
+                  src="https://www.youtube.com/embed/MAXaUgRKOlw?autoplay=1&mute=1&loop=1&playlist=MAXaUgRKOlw&controls=1&rel=0&modestbranding=1"
+                  className="w-full h-full"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title="ILC 2550 Project Video"
                 />
-                {/* Fallback shown if /hero-video.mp4 is missing */}
-                <div
-                  className="absolute inset-0 flex-col items-center justify-center text-cream/60 text-center px-6"
-                  style={{ display: 'none' }}
-                >
-                  <svg className="w-16 h-16 mb-4 text-cream/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-                  </svg>
-                  <p className="text-sm font-sans">Add <span className="font-mono bg-cream/10 px-1 rounded">hero-video.mp4</span> to the <span className="font-mono bg-cream/10 px-1 rounded">public/</span> folder</p>
-                </div>
               </div>
               {/* Decorative border offset */}
               <div className="absolute -bottom-3 -right-3 w-full h-full border border-terracotta/30 -z-10" />

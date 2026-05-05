@@ -7,7 +7,7 @@ function MemberPhoto({ name, photo }: { name: string; photo?: string }) {
       <img
         src={photo}
         alt={name}
-        className="w-full aspect-square object-cover object-top"
+        className="w-full aspect-square object-cover object-center"
       />
     );
   }
