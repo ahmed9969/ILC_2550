@@ -17,7 +17,7 @@ export default function Conclusion() {
           <div className="mt-16 border-t border-cream-dark pt-10 text-center">
             <p className="font-serif text-2xl italic text-olive">"{CONCLUSION.closingQuote}"</p>
             <p className="mt-3 text-sm font-sans text-charcoal/50">
-              ILC 2550 · Webster University · 2025
+              ILC 2550 · Webster University · 2026
             </p>
           </div>
         </div>

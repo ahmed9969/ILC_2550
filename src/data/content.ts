@@ -6,15 +6,15 @@ export const SITE = {
   course: 'ILC 2550: Food, Language and Culture',
   theme: 'Food and Forced Migration: Culture, Survival, and Resilience',
   university: 'Webster University',
-  year: '2025',
-  footer: 'ILC 2550 · Food, Language & Culture · Webster University · Group Project 2025',
+  year: '2026',
+  footer: 'ILC 2550 · Food, Language & Culture · Webster University · Group Project 2026',
 };
 
 // ─── Home ─────────────────────────────────────────────────────────────────────
 
 export const HOME = {
   hero: {
-    eyebrow: 'ILC 2550 · Webster University · 2025',
+    eyebrow: 'ILC 2550 · Webster University · 2026',
     heading: 'Food and Forced Migration',
     subheading: 'Culture, Survival, and Resilience',
     body: 'This collaborative research project explores how food functions as a lifeline, a vessel of memory, and a marker of identity for displaced communities around the world.',
@@ -89,7 +89,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   { id: 'member3',  slug: '/team/member3',  name: 'Shohruhbek Hakimov',    role: 'Visual Designer & Researcher',   ...PLACEHOLDER },
   { id: 'member4',  slug: '/team/member4',  name: 'Aziza Jonaliyeva',      role: 'Content Strategist & Writer',    ...PLACEHOLDER },
   { id: 'member5',  slug: '/team/member5',  name: 'Abdulboriy Qodirov',    role: 'Research Lead & Analyst',        ...PLACEHOLDER },
-  { id: 'member6',  slug: '/team/member6',  name: 'Munir Xamrayev',        role: 'Web Content Editor',             photo: '/team/munir.jpg',      ...PLACEHOLDER },
+  { id: 'member6',  slug: '/team/member6',  name: 'Munir Xamrayev',        role: 'Web Developer & Architect',      photo: '/team/munir.jpg',      ...PLACEHOLDER },
   { id: 'member7',  slug: '/team/member7',  name: 'Ahmed Niaz',            role: 'Lead Web Developer & Architect', photo: '/team/ahmed.jpg',      ...PLACEHOLDER },
   { id: 'member8',  slug: '/team/member8',  name: 'Alishir Faik',          role: 'UI/UX Designer',                 photo: '/team/alishir.jpg',    ...PLACEHOLDER },
   { id: 'member9',  slug: '/team/member9',  name: 'Raxmatillo Tolibjonov', role: 'Content Strategist & Writer',    photo: '/team/raxmatillo.jpg', ...PLACEHOLDER },
@@ -468,7 +468,7 @@ export const BLOG = {
   posts: [
     {
       id: 1,
-      date: 'April 2025',
+      date: 'April 2026',
       tag: 'Field Reflection',
       title: 'Our Group Food Outing: A First Taste of Research',
       body: [
@@ -480,7 +480,7 @@ export const BLOG = {
     },
     {
       id: 2,
-      date: 'March 2025',
+      date: 'March 2026',
       tag: 'Course Reflection',
       title: 'What We Learned About Food, Power, and Displacement',
       body: [
