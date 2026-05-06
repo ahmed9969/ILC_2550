@@ -95,7 +95,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   { id: 'member9',  slug: '/team/member9',  name: 'Raxmatillo Tolibjonov', role: 'Content Strategist & Writer',    photo: '/team/raxmatillo.jpg', ...PLACEHOLDER },
   { id: 'member10', slug: '/team/member10', name: 'Samandar Jafarov',      role: 'Research Lead & Analyst',        ...PLACEHOLDER },
   { id: 'member11', slug: '/team/member11', name: 'Behruzbek Olimjonov',   role: 'Researcher & Writer (Yapper)',   photo: '/team/behruzbek.jpg', ...PLACEHOLDER },
-  { id: 'member12', slug: '/team/member12', name: 'Malikjon Rustamov',     role: 'Researcher & Analyst',           ...PLACEHOLDER },
+  { id: 'member12', slug: '/team/member12', name: 'Malikjon Rustamov',     role: 'Researcher & Analyst',           photo: '/team/malikjon.jpg', ...PLACEHOLDER },
 ];
 
 // ─── Research Hub ─────────────────────────────────────────────────────────────
