@@ -19,7 +19,7 @@ function MemberPhoto({ name, photo }: { name: string; photo?: string }) {
       <svg className="w-16 h-16 text-olive/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
       </svg>
-      <span className="text-xs text-olive/40 font-sans mt-2">Photo placeholder</span>
+      <span className="text-xs text-olive/40 font-sans mt-2 text-center px-2">Uncomfortable Uploading Picture</span>
     </div>
   );
 }

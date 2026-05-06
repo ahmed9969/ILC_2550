@@ -45,7 +45,7 @@ export default function Home() {
             <div className="relative w-full">
               <div className="relative overflow-hidden border-2 border-cream/20 shadow-2xl bg-charcoal/40 aspect-video">
                 <iframe
-                  src="https://www.youtube.com/embed/MAXaUgRKOlw?autoplay=1&mute=1&loop=1&playlist=MAXaUgRKOlw&controls=1&rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/4BrS8XzucKk?autoplay=1&mute=1&loop=1&playlist=4BrS8XzucKk&controls=1&rel=0&modestbranding=1"
                   className="w-full h-full"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
